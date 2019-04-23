@@ -1,0 +1,149 @@
+ul.horizontal-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+ul.vertical-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 16px;
+    color: white;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-55%)
+}
+
+.menu-icon {
+    color: white;
+    display: none;
+    margin-left: 16px;
+    cursor: pointer;
+    overflow: hidden;
+  
+
+}
+
+p {
+    margin: 0
+}
+
+.side-menu {
+    display: none;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none !important;
+    display: inline-block;
+    color: white !important;
+    overflow: hidden;
+    height: 46px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.active {
+    background: green;
+    color: white !important;
+}
+
+.nav {
+    background: blue;
+    height: 46px;
+    display: block !important;
+}
+
+.icon-menu {
+    margin-right: 8px;
+}
+
+a:hover:not(.active) {
+    background: gray !important;
+}
+
+@media (max-width:600px) {
+    ul.horizontal-menu {
+        display: none;
+    }
+    li {
+        display: block;
+        width: 100%;
+        height: 46px;
+    }
+    .icon-text {
+        justify-content: left;
+    }
+    .title {
+        margin-left: 5px;
+    }
+    .nav {
+        background: blue;
+        justify-content: left;
+    }
+    .backdrop {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    a {
+        width: 100%;
+        text-align: left;
+        color: black !important;
+    }
+    .menu-icon {
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+    .side-menu {
+        display: block;
+    }
+    .side-bar {
+        width: 220px;
+        height: 100%;
+        z-index: 200;
+        background: white;
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 46px;
+        left: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out
+    }
+    .side-bar.open {
+        transform: translateX(0%)
+    }
+}
