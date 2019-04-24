@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './product.css';
 import image from './box8.jpeg'
+
 class Product extends Component {
     constructor(props) {
         super(props);

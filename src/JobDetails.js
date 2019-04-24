@@ -10,7 +10,7 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="row">
+            <div className="rowview">
 
                 <div className="star_icon">
                     <i class="material-icons">
@@ -47,11 +47,6 @@ class App extends Component {
                     </div>
 
                 </div>
-
-
-
-
-
             </div>
         );
     }

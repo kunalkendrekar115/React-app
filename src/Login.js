@@ -33,6 +33,9 @@ class Login extends Component {
             passwordError = <Alert variant={'danger'}> Please enter Password</Alert>
         return (
             <div class="login-form">
+                <div className="text-center" style={{ marginBottom: 15, fontSize: 26, color: 'black', fontStyle: 'bold' }}>
+                    <span>Login</span>
+                </div>
                 <Form className="card">
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

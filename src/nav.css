@@ -38,7 +38,6 @@ li {
     cursor: pointer;
     overflow: hidden;
   
-
 }
 
 p {
@@ -60,7 +59,7 @@ p {
     justify-content: center;
 }
 
-a {
+.normal {
     text-decoration: none !important;
     display: inline-block;
     color: white !important;
@@ -85,7 +84,7 @@ a {
     margin-right: 8px;
 }
 
-a:hover:not(.active) {
+.normal:hover:not(.active) {
     background: gray !important;
 }
 
@@ -115,10 +114,13 @@ a:hover:not(.active) {
         z-index: 100;
         background: rgba(0, 0, 0, 0.3);
     }
-    a {
+    .normal {
         width: 100%;
         text-align: left;
         color: black !important;
+    }
+    .active{
+        color: white !important;
     }
     .menu-icon {
         display: inline-block;
