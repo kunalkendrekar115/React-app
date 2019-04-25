@@ -19,14 +19,14 @@ class NavBar extends Component {
                 <li>
                     <NavLink
                         onClick={() => this.setState({ isSideBarOpen: false })}
-                        exact to="/login" className="normal" activeClassName="active">
+                        exact to="/menu" className="normal" activeClassName="active">
                         <div className="icon-text"> <i class="material-icons icon-menu">home</i>Home</div>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink
                         onClick={() => this.setState({ isSideBarOpen: false })}
-                        className="normal" activeClassName="active" to="/product">
+                        className="normal" activeClassName="active" to="/menu/product">
                         <div className="icon-text"> <i class="material-icons icon-menu">person</i>Product</div>
                     </NavLink>
                 </li>

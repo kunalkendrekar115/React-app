@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
 import React, { Component } from 'react';
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, browserHistory } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
 import JobDetails from './JobDetails'
@@ -19,14 +19,10 @@ class App extends Component {
     return (
       <Router>
 
-        <Switch>
-          <Route  path="/" component={Menu}>
-            <Route path="/login" component={Login} />
-            <Route path="/product" component={ProductList} />
-            <Route path="/settings" component={JobDetails} />
-          </Route>
-          <Route path="/signup" component={Signup} />
-        </Switch>
+        <Route path="/menu" component={Menu}>
+        </Route>
+        <Route path="/signup" component={Signup} />
+      
       </Router>
 
     );

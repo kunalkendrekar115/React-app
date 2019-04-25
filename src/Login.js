@@ -24,7 +24,7 @@ class Login extends Component {
         if (this.state.password === '')
             this.setState({ passwordError: true })
 
-        this.props.history.push('/menu')
+        this.props.history.push('/signup')
 
     }
     render() {
