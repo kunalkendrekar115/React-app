@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Signup extends Component {
   render() {
     return (
-      <div>
+      <div style={{backgroundColor:'red',width:'100%',height:500}}>
         
       </div>
     )

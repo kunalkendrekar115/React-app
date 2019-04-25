@@ -16,8 +16,13 @@ class Menu extends Component {
 
   render() {
     return (
-    
-          <NavBar></NavBar>
+
+      <div>
+        <NavBar></NavBar>
+        <div style={{ width: 400, height: 500 }}>
+          {this.props.children}
+        </div>
+      </div>
 
     );
   }

@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import { Alert, Button, Form } from 'react-bootstrap';
 import React, { Component } from 'react';
-
+import {Redirect} from 'react-router-dom'
 import logo from './logo.svg';
 
 class Login extends Component {
@@ -23,6 +23,8 @@ class Login extends Component {
 
         if (this.state.password === '')
             this.setState({ passwordError: true })
+
+        this.props.history.push('/menu')
 
     }
     render() {
@@ -61,7 +63,7 @@ class Login extends Component {
 
                 </Form>
                 <div className="text-center" style={{ marginTop: 10, fontSize: 14, cursor: 'pointer' }}>
-                    <span onClick={()=>this.props.history.push('/signup')}>Sign up</span>
+                    <a href="/signup">Sign up</a>
                     <span style={{ marginLeft: 10, marginRight: 10 }}>|</span>
                     <span>Forgot Password</span>
 

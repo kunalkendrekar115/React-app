@@ -20,13 +20,13 @@ class App extends Component {
       <Router>
 
         <Switch>
-          <Route exact path="/" component={Menu} />
-          <Route  path="/signup" component={Signup} />
-          <Route exact path="/" component={Login} />
-          <Route path="/product" component={ProductList} />
-          <Route path="/settings" component={JobDetails} />
+          <Route  path="/" component={Menu}>
+            <Route path="/login" component={Login} />
+            <Route path="/product" component={ProductList} />
+            <Route path="/settings" component={JobDetails} />
+          </Route>
+          <Route path="/signup" component={Signup} />
         </Switch>
-
       </Router>
 
     );
