@@ -1,35 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.css';
 
-import JobDetails from './JobDetails'
-import NavBar from './NavBar';
-import Product from './Product';
+import React, { Component } from 'react';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import JobDetails from './JobDetails'
 import Login from './Login';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Menu from './Menu';
+import NavBar from './NavBar';
 import ProductList from './ProductList';
-
+import Signup from './Signup';
+import logo from './logo.svg';
 
 class App extends Component {
 
- 
+
   render() {
     return (
       <Router>
-        <div>
 
-          <NavBar></NavBar>
+        <Switch>
+          <Route exact path="/" component={Menu} />
+          <Route  path="/signup" component={Signup} />
+          <Route exact path="/" component={Login} />
+          <Route path="/product" component={ProductList} />
+          <Route path="/settings" component={JobDetails} />
+        </Switch>
 
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/login" component={Login} />
-            <Route path="/product" component={ProductList} />
-            <Route path="/settings" component={JobDetails} />
-          </Switch>
-         
-        </div>
       </Router>
 
     );

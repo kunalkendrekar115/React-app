@@ -30,14 +30,14 @@ input[type="button"] {
 
 .submit-button{
   width: 100%; 
-  margin-top: 20px; 
+  margin-top: 10px; 
 }
 
 .login-form{
   position: relative;
   width: 380px;
   margin: auto;
-  top: 100px;
+  top: 50px;
 }
 
 .card{
@@ -69,6 +69,12 @@ input[type="button"] {
    .row{
      margin:0px !important;
    }
+
+   .login-form{
+     width: 100%;
+     padding: 20px !important;
+     box-sizing: border-box !important;
+  }
 }
 
 @keyframes App-logo-spin {

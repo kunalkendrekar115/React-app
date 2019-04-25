@@ -78,6 +78,10 @@ p {
     background: blue;
     height: 46px;
     display: block !important;
+   /*  position: fixed;
+    z-index: 2 !important; */
+  
+    width: 100%;
 }
 
 .icon-menu {

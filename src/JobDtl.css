@@ -2,7 +2,7 @@
 
   padding: 12px !important;  
   width: 558px !important;
-  
+ 
   display: block !important;
   margin-top: 10px !important;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) !important;
@@ -73,7 +73,7 @@
 
 @media (max-width:600px)
 {
-    .row{
+    .rowview{
         width: 100% !important;
           }
           .banner{

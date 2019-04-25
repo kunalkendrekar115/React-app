@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
 import './nav.css';
+
+import React, { Component } from 'react';
+
 import { NavLink } from 'react-router-dom';
+
 class NavBar extends Component {
 
     constructor(props) {
@@ -14,12 +17,16 @@ class NavBar extends Component {
         return (
             <ul className={classNames}>
                 <li>
-                    <NavLink exact to="/" className="normal" activeClassName="active">
+                    <NavLink
+                        onClick={() => this.setState({ isSideBarOpen: false })}
+                        exact to="/" className="normal" activeClassName="active">
                         <div className="icon-text"> <i class="material-icons icon-menu">home</i>Home</div>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className="normal" activeClassName="active" to="/product">
+                    <NavLink
+                        onClick={() => this.setState({ isSideBarOpen: false })}
+                        className="normal" activeClassName="active" to="/product">
                         <div className="icon-text"> <i class="material-icons icon-menu">person</i>Product</div>
                     </NavLink>
                 </li>
@@ -29,7 +36,9 @@ class NavBar extends Component {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className="normal" activeClassName="active" to="/settings">
+                    <NavLink
+                        onClick={() => this.setState({ isSideBarOpen: false })}
+                        className="normal" activeClassName="active" to="/settings">
                         <div className="icon-text"> <i class="material-icons icon-menu">settings</i>Settings</div>
                     </NavLink>
                 </li>
@@ -40,7 +49,7 @@ class NavBar extends Component {
     render() {
         return (
 
-            <div style={{ width: '100%' }}>
+            <div style={{ width: '100%'}}>
                 <div className="nav">
 
                     <div className="menu-icon">
