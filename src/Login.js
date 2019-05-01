@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import { Alert, Button, Form } from 'react-bootstrap';
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import logo from './logo.svg';
 
 class Login extends Component {
@@ -11,54 +11,64 @@ class Login extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { email: '', password: '' }
+        this.state = { email: '', password: '', validated: false }
     }
 
-    validate() {
+    validate(event) {
 
-        if (this.state.email === '') {
-            this.setState({ emailError: true })
+        const form = event.currentTarget;
+        event.preventDefault()
+        event.stopPropagation();
+       
+        if (form.checkValidity() === false) {
+            this.setState({ validated: true });
             return
         }
 
-        if (this.state.password === '')
-            this.setState({ passwordError: true })
-
+       
         this.props.history.push('/signup')
 
     }
     render() {
 
-        let emailError
-        if (this.state.emailError)
-            emailError = <Alert variant={'danger'}> Please enter email ID</Alert>
-        let passwordError
-        if (this.state.passwordError)
-            passwordError = <Alert variant={'danger'}> Please enter Password</Alert>
         return (
             <div class="login-form">
                 <div className="text-center" style={{ marginBottom: 15, fontSize: 26, color: 'black', fontStyle: 'bold' }}>
                     <span>Login</span>
                 </div>
-                <Form className="card">
+                <Form className="card"
+                    noValidate
+                    validated={this.state.validated}
+                    onSubmit={e => this.validate(e)}>
+
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" onChange={(text) => {
-                            this.setState({ emailError: false, email: text })
-                        }} />
-                        {emailError}
+                        <Form.Control
+                            required
+                            type="email" placeholder="Enter email" onChange={(text) => {
+                                this.setState({ emailError: false, email: text })
+                            }} />
+                        <Form.Control.Feedback type="invalid">
+                            Please enter email ID
+                       </Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password"
+                        <Form.Control
+                            ref="password"
+                            required
+                            className={'form-control has-error'}
+                            type="password" placeholder="Password"
                             onChange={(text) => {
                                 this.setState({ passwordError: false, password: text })
                             }} />
-                        {passwordError}
+                        <Form.Control.Feedback type="invalid">
+                            Please enter password
+                       </Form.Control.Feedback>
                     </Form.Group>
                     <Button
-                        onClick={this.validate.bind(this)}
+                        type="submit"
                         className="submit-button" variant="primary">Submit</Button>
 
                 </Form>
